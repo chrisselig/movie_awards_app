@@ -8,6 +8,8 @@ License: MIT + file LICENSE
 URL: https://github.com/chrisselig/movie_awards_app
 BugReports: https://github.com/chrisselig/movie_awards_app/issues
 Imports: 
+    bsicons,
+    bslib,
     config (>= 0.3.2),
     dplyr,
     duckdb,
@@ -16,6 +18,7 @@ Imports:
     plotly,
     shiny (>= 1.8.1.1),
     shinyjs,
+    shinyWidgets,
     stringr
 Suggests: 
     spelling,

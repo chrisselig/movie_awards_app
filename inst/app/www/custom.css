@@ -1,1 +1,7 @@
- 
+.filter-bar {
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
