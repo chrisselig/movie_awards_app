@@ -26,8 +26,8 @@ app_ui <- function(request) {
                     # Shared Filter Bar for Year and Reviewer
                     div(class = "filter-bar", common_filters()),
 
-                    # Main Content for Summary
-                    plotOutput("summary_plot")
+                    ## Load Summary module ----
+                    mod_summary_ui("summary")
                 )
             ),
 

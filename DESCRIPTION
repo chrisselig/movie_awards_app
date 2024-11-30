@@ -11,6 +11,7 @@ Imports:
     bsicons,
     bslib,
     config (>= 0.3.2),
+    DBI,
     dplyr,
     duckdb,
     ggplot2,
