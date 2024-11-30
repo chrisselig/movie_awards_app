@@ -1,17 +1,27 @@
 Package: movieawardsapp
-Title: An Amazing Shiny App
+Title: Movie Awards App
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "firstname",
-           family = "lastname",
-           role = c("aut", "cre"),
-           email = "your@email.com")
-Description: What the package does (one paragraph).
-License: What license is it under?
+    person("Chris", "Selig", , "chris.selig@bidamia.ca", role = c("cre", "aut"))
+Description: Shiny app that visualizes aspects of the movie awards.
+License: MIT + file LICENSE
+URL: https://github.com/chrisselig/movie_awards_app
+BugReports: https://github.com/chrisselig/movie_awards_app/issues
 Imports: 
     config (>= 0.3.2),
+    dplyr,
+    duckdb,
+    ggplot2,
     golem (>= 0.4.1),
-    shiny (>= 1.8.1.1)
+    plotly,
+    shiny (>= 1.8.1.1),
+    shinyjs,
+    stringr
+Suggests: 
+    spelling,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
 Encoding: UTF-8
+Language: en-US
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
