@@ -47,13 +47,34 @@ mod_summary_server <- function(id,r){
         # Reorder genre factor levels based on descending count
         genre_data$genre <- factor(genre_data$genre, levels = rev(genre_data$genre))
 
+        # Define threshold for label placement
+        label_threshold <- max(genre_data$count) * 0.25
+
+
         # Create ggplot with coord_flip()
         p <- genre_data |>
             ggplot(aes(x = genre, y = count, fill = genre)) +
-            geom_bar(stat = 'identity') +
-            geom_text(aes(label = count)) +
-            labs(title = "Genre Count", x = "Genre", y = "Count") +
+            geom_bar(stat = "identity") + # Horizontal bars
+            geom_text(aes(
+                label = count,
+                color = ifelse(count > label_threshold, "inside", "outside"),
+                hjust = ifelse(count > label_threshold, 0.5, -1.5) # Adjust larger values further inside/outside
+            ),
+            position = position_nudge(y = ifelse(genre_data$count > label_threshold, -0.2, 0.2)), # Fine-tune y-axis nudging
+            size = 4, show.legend = FALSE) + # Adjust text size
+            scale_fill_manual(values = r$colors) + # Use consistent genre colors
+            scale_color_manual(
+                values = c("inside" = "white", "outside" = "black") # White text for inside, black for outside
+            ) +
+            labs(title = "Genre Count", x = NULL, y = NULL) +
             theme_minimal() +
+            theme(
+                axis.text.x = element_blank(),      # Remove x-axis text labels
+                axis.title.x = element_blank(),     # Remove x-axis title
+                panel.grid = element_blank(),       # Remove all grid lines
+                axis.ticks.x = element_blank(),     # Remove x-axis ticks
+                legend.position = "none"            # Turn off legend
+            ) +
             coord_flip()
 
         # Convert ggplot to plotly

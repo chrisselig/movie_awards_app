@@ -29,6 +29,20 @@ app_server <- function(input, output, session) {
             '#2e5a50',
             '#a4a4cc'
 
+        ),
+        genre_colors = c(
+            Action = "#c84843",
+            Comedy = "#13afe9",
+            Drama = "#e1c19b",
+            Fantasy = "#45dbf2",
+            Horror = "#6d201c",
+            `Science Fiction` = "#083c84",
+            Superhero = "#949054",
+            Musical = "#639a98",
+            Crime = "#2f3d53",
+            Romance = "#adc2d1",
+            Thriller = "#2e5a50",
+            Adventure = "#a4a4cc"
         )
     )
 
