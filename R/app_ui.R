@@ -3,9 +3,15 @@
 #' @param request Internal parameter for `{shiny}`.
 #'     DO NOT REMOVE.
 #' @import shiny
+#' @import plotly
 #' @import shinyjs
 #' @import bslib
+#' @import dplyr
+#' @import ggplot2
+#' @import ggthemes
 #' @noRd
+#'
+
 app_ui <- function(request) {
     tagList(
         # Add external resources
