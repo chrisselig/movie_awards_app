@@ -34,7 +34,7 @@ mod_summary_server <- function(id,r){
     output$genre_count <- renderPlotly({
         req(r$best_movies)
 
-        # Group data by genre and count the occurrences
+        # Count by Genre ----
         genre_data <- r$best_movies |>
             # filter(
             #     year == input$year_filter,
@@ -81,6 +81,25 @@ mod_summary_server <- function(id,r){
         ggplotly(p)
     })
 
+    # Total time of movies watched ----
+
+    # Movie count by country ----
+
+    # Count by director ----
+
+    # Count by director gender ----
+
+    # County by director race ----
+
+    # Count by Actor ----
+
+    # Count by actor gender ----
+
+    # Count by actor race ----
+
+    # Count by Distributor ----
+
+    # Count by Release Month ----
 
   })
 }
