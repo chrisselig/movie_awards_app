@@ -32,14 +32,16 @@ mod_summary_server <- function(id,r){
     ns <- session$ns
 
     output$genre_count <- renderPlotly({
-        req(r$best_movies)
+        req(r$movies)
 
         # Count by Genre ----
-        genre_data <- r$best_movies |>
+        genre_data <- r$movies |>
             # filter(
             #     year == input$year_filter,
             #     reviewer == input$reviewer_filter
             #     ) |>
+            select(genre,movie) |>
+            distinct() |>
             group_by(genre) |>
             summarise(count = n(), .groups = 'drop') |>
             arrange(desc(count)) # Sort data by count in descending order

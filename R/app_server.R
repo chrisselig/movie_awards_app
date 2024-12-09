@@ -12,7 +12,7 @@ app_server <- function(input, output, session) {
     # Define reactive values ----
     r <- reactiveValues(
         ## Data ----
-        best_movies = NULL,
+        movies = NULL,
 
         ## Colors ----
         colors = c(
@@ -48,11 +48,11 @@ app_server <- function(input, output, session) {
 
     # Observe block to load data into r$best_movies
     observe({
-        result <- custom_query_duckdb("SELECT * FROM stg_best_movies")
+        result <- custom_query_duckdb("SELECT * FROM movies")
         if (is.null(result) || nrow(result) == 0) {
-            r$best_movies <- data.frame(genre = character(), year = integer(), reviewer = character())  # Empty data frame
+            r$movies <- data.frame(genre = character(), year = integer(), reviewer = character())  # Empty data frame
         } else {
-            r$best_movies <- result
+            r$movies <- result
         }
     })
 
