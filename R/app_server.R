@@ -11,8 +11,25 @@ app_server <- function(input, output, session) {
 
     # Define reactive values ----
     r <- reactiveValues(
-        # Data loads
-        best_movies = NULL
+        ## Data ----
+        best_movies = NULL,
+
+        ## Colors ----
+        colors = c(
+            '#c84843',
+            '#13afe9',
+            '#e1c19b',
+            '#45dbf2',
+            '#6d201c',
+            '#083c84',
+            '#949054',
+            '#639a98',
+            '#2f3d53',
+            '#adc2d1',
+            '#2e5a50',
+            '#a4a4cc'
+
+        )
     )
 
     # Observe block to load data into r$best_movies
